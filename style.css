@@ -4,91 +4,73 @@
     box-sizing: border-box;
 }
 
-body {
-    background-color: #02010a; /* Locks the master background color behind everything */
+html, body {
+    width: 100%;
+    min-height: 100%;
+    background-color: #000000;
     overflow-x: hidden;
+}
+
+.intro, .river {
+    position: relative;
+    width: 100vw;
+    height: 100dvh; 
+    overflow: hidden;
 }
 
 /*Panel 1*/
 
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  min-height: 100%;
-  background: #02010a;
+.p1bg, .p1fg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill; 
 }
 
-body {
-  overflow-x: hidden;
+.p1bg { z-index: 1; }
+
+.p1fg { 
+    z-index: 3; 
+    pointer-events: none; 
+    object-fit: contain; 
+    object-position: left bottom; 
 }
 
-.intro, .river {
-  position: relative;
-  width: 100%;
-  min-height: 100dvh; /* better than 100vh on mobile */
-  overflow: hidden;
+.title {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center; 
+    z-index: 4;
+    pointer-events: auto;
+    transition: filter 0.4s ease-in-out;
 }
-
-.p1bg, .riverbg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;   /* preserves visual composition without stretching */
-  z-index: 1;
-}
-
-.title, .p1fg, .surfaces, .pluLand, .shore {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.p1fg, .shore, .pluLand {
-  pointer-events: none;
-  z-index: 2;
-}
-
-.title, .surfaces {
-  z-index: 3;
-  object-fit: contain;
-}
-
 .title:hover {
-  filter: drop-shadow(0 0 10px #bb00ff) drop-shadow(0 0 15px #f051ff);
+    filter: drop-shadow(0 0 10px #bb00ff) drop-shadow(0 0 15px #f051ff);
 }
 
 /*Panel 2*/
 
-.river {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-}
-
-.riverbg,.shore {
+.riverbg, .shore {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: fill;
+    object-fit: fill; 
     z-index: 1;
 }
+.shore { z-index: 2; pointer-events: none; }
 
 .surfaces, .pluLand {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: contain;
+    object-position: center top; /* Anchors the puzzle right against the top fold */
 }
-
-.shore    { z-index: 2; pointer-events: none; }
-.surfaces { z-index: 3; object-position: center top; }
+.surfaces { z-index: 3; }
 .pluLand  { z-index: 4; pointer-events: none; }
