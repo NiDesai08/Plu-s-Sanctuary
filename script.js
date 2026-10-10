@@ -12,6 +12,7 @@ document.addEventListener("mousemove", (e) => {
     }
 });
 
+//Panel 2: Hopping Interaction
 function hopTo(stoneNumber) {
     const plu = document.querySelector(".pluLand");
 
@@ -51,3 +52,21 @@ function hopTo(stoneNumber) {
         plu.src = "assets/Panel 2/pluLand.png";
     }, 600);
 }
+
+//Panel 3: Vine Fade
+
+function clearVine(vineNumber) {
+    //targets the vine and button elements based on the vine number
+    const targetedVine = document.querySelector(`.v${vineNumber}`);
+    const targetedButton = document.querySelector(`.target${vineNumber}`);
+
+    if (targetedVine) {
+        // fades vine out smoothly using CSS transition timing
+        targetedVine.style.opacity = "0";
+    }
+
+    if (targetedButton) {
+        //Removes the button layer after so user cannot click it again
+        targetedButton.style.display = "none";
+    }
+} 
