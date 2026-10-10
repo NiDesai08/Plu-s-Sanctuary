@@ -11,37 +11,55 @@ body {
 
 /*Panel 1*/
 
-.intro {
-    position: relative;
-    width: 100vw;
-    height: 100vh; 
-    overflow: hidden;
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  background: #02010a;
 }
 
-
-.p1bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
+body {
+  overflow-x: hidden;
 }
 
-.title, .p1fg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    
+.intro, .river {
+  position: relative;
+  width: 100%;
+  min-height: 100dvh; /* better than 100vh on mobile */
+  overflow: hidden;
 }
 
-.p1fg   { z-index: 3; pointer-events: none; object-position: left bottom; }
-.title  { z-index: 4; pointer-events: auto; transition: filter 0.4s; }
-.title:hover { filter: drop-shadow(0 0 10px #bb00ff) drop-shadow(0 0 15px #f051ff); }
+.p1bg, .riverbg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* preserves visual composition without stretching */
+  z-index: 1;
+}
+
+.title, .p1fg, .surfaces, .pluLand, .shore {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.p1fg, .shore, .pluLand {
+  pointer-events: none;
+  z-index: 2;
+}
+
+.title, .surfaces {
+  z-index: 3;
+  object-fit: contain;
+}
+
+.title:hover {
+  filter: drop-shadow(0 0 10px #bb00ff) drop-shadow(0 0 15px #f051ff);
+}
 
 /*Panel 2*/
 
