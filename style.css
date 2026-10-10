@@ -4,13 +4,20 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #02010a; /* Locks the master background color behind everything */
+    overflow-x: hidden;
+}
+
+/*Panel 1*/
+
 .intro {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 100vh; 
     overflow: hidden;
-    background-color: #0d0214;
 }
+
 
 .p1bg {
     position: absolute;
@@ -20,35 +27,50 @@
     height: 100%;
     object-fit: cover;
     z-index: 1;
-    transform: scale(1.1); 
 }
 
-.title {
+.title, .p1fg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    z-index: 3; 
-
-    pointer-events: auto; 
-    transition: filter 0.6s ease-in-out; 
+    object-fit: contain;
     
 }
 
-.title:hover {
-    filter: drop-shadow(0 0 10px #bb00ff) drop-shadow(0 0 15px #f051ff);
+.p1fg   { z-index: 3; pointer-events: none; object-position: left bottom; }
+.title  { z-index: 4; pointer-events: auto; transition: filter 0.4s; }
+.title:hover { filter: drop-shadow(0 0 10px #bb00ff) drop-shadow(0 0 15px #f051ff); }
+
+/*Panel 2*/
+
+.river {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
-.p1fg {
+.riverbg,.shore {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    z-index: 2;
-    transform: scale(1.1); 
+    object-fit: fill;
+    z-index: 1;
 }
 
+.surfaces, .pluLand {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.shore    { z-index: 2; pointer-events: none; }
+.surfaces { z-index: 3; object-position: center top; }
+.pluLand  { z-index: 4; pointer-events: none; }
