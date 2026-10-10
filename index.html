@@ -9,23 +9,30 @@
 <body>
 
     <section class="intro"> <!-- Panel 1 -->
-        <img src="assets/Panel 1/titleBack.png" class="p1bg">
-        <img src="assets/Panel 1/Title.png" class="title">
-        <img src="assets/Panel 1/titleFore.png" class="p1fg">   
+        <img src="assets/Panel 1/titleBack.png" class="p1bg" alt="Title Background">
+        <img src="assets/Panel 1/Title.png" class="title" alt="Title Text">
+        <img src="assets/Panel 1/titleFore.png" class="p1fg" alt="Title Foreground">   
     </section>
 
     <section class="river"> <!-- Panel 2 -->
-        <img src="assets/Panel 2/p2Back.png" class="riverbg">
+        <img src="assets/Panel 2/p2Back.png" class="riverbg" alt="River Background">
+        
+        <img src="assets/Panel 2/p2ForeT.png" class="shore topShore" alt="Top Shore">
+        <img src="assets/Panel 2/p2ForeB.png" class="shore bottomShore" alt="Bottom Shore">
 
-        <!-- Foreground Panel 2 -->
-        <img src="assets/Panel 2/p2ForeT.png" class="shore topShore">
-        <img src="assets/Panel 2/p2ForeB.png" class="shore bottomShore">
+        <img src="assets/Panel 2/p2Puzzle.png" class="surfaces" alt="Stepping Stones">
+        
+        <img src="assets/Panel 2/pluLand.png" class="pluLand" alt="Plu Character">
 
-        <img src="assets/Panel 2/p2Puzzle.png" class="surfaces">
-
-        <img src="assets/Panel 2/pluLand.png" class="pluLand">
-    
+        <div class="surface-grid">
+            <button class="b-btn b1" onclick="hopTo(1)">1</button>
+            <button class="b-btn b2" onclick="hopTo(2)">2</button>
+            <button class="b-btn b3" onclick="hopTo(3)">3</button>
+            <button class="b-btn b4" onclick="hopTo(4)">4</button>
+            <button class="b-btn b5" onclick="hopTo(5)">5</button>
+        </div>
     </section>
+
     <script src="script.js"></script>
 </body>
 </html>

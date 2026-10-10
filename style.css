@@ -61,39 +61,53 @@ html, body {
     height: 100%;
     object-fit: fill;
 }
-
 .riverbg  { z-index: 1; }
 .shore    { z-index: 2; pointer-events: none; }
-.surfaces { z-index: 3; }
+.surfaces { z-index: 3; pointer-events: none; }
 
 .pluLand {
     position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
+    top: 2%; 
+    left: 48%; 
+    width: auto;
+    height: 180px;
     object-fit: contain;
-    object-position: center top;
     z-index: 4;
-    pointer-events: none;
+    pointer-events: none; 
+    transform: translate(-50%, -50%) scale(0.85);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-
 /* Invisible click targets for Panel 2 */
+
 .surface-grid {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
-    z-index: 5;
+    z-index: 99; 
+    pointer-events: auto; 
 }
+
 .b-btn {
     position: absolute;
-    background: transparent;
-    border: 2px dashed rgba(0, 255, 204, 0.4); 
+    background: transparent !important; 
+    border: 3px dashed transparent !important;       
     border-radius: 50%;
     cursor: pointer;
-    width: 120px;   /* Approximate rock touch-zone width */
-    height: 120px;  /* Approximate rock touch-zone height */
+    width: 100px;   
+    height: 100px;  
     transform: translate(-50%, -50%);
+    z-index: 100;
     outline: none;
+    display: block !important;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
+
+.b1 { left: 55%; top: 16%; }
+.b2 { left: 41%; top: 24%; }
+.b3 { left: 59%; top: 40%; }
+.b4 { left: 37%; top: 51%; }
+.b5 { left: 60%; top: 74%; }
