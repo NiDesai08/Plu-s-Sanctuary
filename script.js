@@ -1,4 +1,4 @@
-
+//Panel 1: Parallax Effect
 document.addEventListener("mousemove", (e) => {
     const x = (window.innerWidth / 2 - e.pageX) / 80;
     const y = (window.innerHeight / 2 - e.pageY) / 80;
@@ -11,6 +11,36 @@ document.addEventListener("mousemove", (e) => {
         fg1.style.transform = `translate(${x * 0.8}px, ${y * 0.8}px)`;
     }
 });
+
+//Global Page Flip Function
+const pageSequence = ["p1", "p2", "p3"]; 
+let activePageIndex = 0;
+
+function nextPage() {
+    document.getElementById(pageSequence[activePageIndex]).classList.remove("visible");
+    activePageIndex++;
+    document.getElementById(pageSequence[activePageIndex]).classList.add("visible");
+}
+
+function restartStory() {
+    document.getElementById("p4a").classList.remove("visible");
+    document.getElementById("p4b").classList.remove("visible");
+    activePageIndex = 0;
+    clearedVinesCount = 0;
+    document.getElementById("choiceBox").classList.remove("revealed");
+    
+    document.querySelectorAll(".v-btn").forEach(btn => btn.style.display = "block");
+    ["v1", "v2", "v3"].forEach(img => document.querySelector(`.${img}`).style.opacity = "1");
+    
+    const riverPlu = document.querySelector(".pluLand");
+    if (riverPlu) {
+        riverPlu.style.left = "48%";
+        riverPlu.style.top = "2%";
+        riverPlu.style.transform = "translate(-50%, -50%) scale(0.85)";
+    }
+    document.getElementById("riverNav").classList.remove("show-btn");
+    document.getElementById("p1").classList.add("visible");
+}
 
 //Panel 2: Hopping Interaction
 function hopTo(stoneNumber) {
@@ -45,6 +75,8 @@ function hopTo(stoneNumber) {
             plu.style.left = "51%";
             plu.style.top = "57%";
             plu.style.transform = "translate(-50%, -50%) scale(2.80)";
+
+            document.getElementById("riverNav").classList.add("show-btn");
             break;
     }
 
@@ -54,6 +86,7 @@ function hopTo(stoneNumber) {
 }
 
 //Panel 3: Vine Fade
+let clearedVinesCount = 0;
 
 function clearVine(vineNumber) {
     //targets the vine and button elements based on the vine number
@@ -68,5 +101,25 @@ function clearVine(vineNumber) {
     if (targetedButton) {
         //Removes the button layer after so user cannot click it again
         targetedButton.style.display = "none";
+        clearedVinesCount++;
     }
-} 
+
+    if (clearedVinesCount === 3) {
+        //Reveals the choice box after all vines are cleared
+          document.getElementById("choiceBox").classList.add("revealed");
+    }
+}
+ 
+function chooseEnding(branchChoice) {
+    document.getElementById("p3").classList.remove("visible");
+    
+    if (branchChoice === 'left') {
+        const p4a = document.getElementById("p4a");
+        p4a.querySelector(".ending-img").src = "assets/Panel 4A/4A.png";
+        p4a.classList.add("visible");
+    } else if (branchChoice === 'right') {
+        const p4b = document.getElementById("p4b");
+        p4b.querySelector(".ending-img").src = "assets/Panel 4B/4B.png";
+        p4b.classList.add("visible");
+    }
+}

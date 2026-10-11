@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plu's Sanctuary</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- Preloads Ending Images-->
+    <link rel="preload" href="assets/Panel 4/4A.png" as="image">
+    <link rel="preload" href="assets/Panel 4/4B.png" as="image">
+
 </head>
 <body>
 
@@ -57,19 +62,19 @@
             </div>
 
             <div class="sign-choices" id="choiceBox">
-                <button class="choice-btn" onclick="chooseEnding('left')">Explore Left</button>
-                <button class="choice-btn" onclick="chooseEnding('right')">Explore Right</button>
+            <button class="choice-target left-sign" onclick="chooseEnding('left')"></button>
+            <button class="choice-target right-sign" onclick="chooseEnding('right')"></button>
             </div>
 
             <img src="assets/Panel 3/p3Plu.png" class="pluFg">
         </section>
 
         <section class="p4" id="p4a"> <!-- Panel 4 Ending A -->
-            <img src="assets/Panel 4/4A.png" class="ending-img">
+            <img src="assets/Panel 4A/4A.png" class="ending-img">
             <button class="nav-btn restart-btn" onclick="restartStory()">← Read Again</button>
         </section>
     
-         <section class="p4" id="p4b">
+         <section class="p4" id="p4b"> <!-- Panel 4 Ending B -->
             <img src="assets/Panel 4/4B.png" class="ending-img">
             <button class="nav-btn restart-btn" onclick="restartStory()">← Read Again</button>
         </section>

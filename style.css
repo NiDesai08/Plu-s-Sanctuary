@@ -207,36 +207,37 @@ html, body {
 
 .sign-choices {
     position: absolute;
-    left: 50%;
-    top: 45%;
-    transform: translateX(-50%, -50%);
-    width: 450px;
-    display: flex;
-   justify-content: space-between;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     z-index: 10;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.5s ease-in-out;
+    pointer-events: none;
 }
 
-.sign-choices.revealed { opacity: 1; visibility: visible; }
+.sign-choices.revealed { opacity: 1; visibility: visible;  pointer-events: auto;}
 
-.choice-btn {
-    padding: 12px 28px;
-    background-color: rgba(2, 1, 10, 0.85);
-    border: 2px solid #bb00ff;
-    border-radius: 20px;
-    color: #ffffff;
-    font-weight: bold;
+.choice-target {
+    position: absolute;
+    background: transparent;
+    border: 3px dashed transparent;
     cursor: pointer;
-    box-shadow: 0 0 15px #bb00ff;
-    transition: all 0.3s ease;
+    width: 220px;  
+    height: 100px;
+    transform: translate(-50%, -50%);
+    outline: none;
 }
 
-.choice-btn:hover {
-     background-color: #f051ff; 
-     box-shadow: 0 0 25px #f051ff;
-     transform: scale(1.05);
+.left-sign {
+    left: 38%;
+    top: 40%;
+}
+
+.right-sign {
+    left: 63%;
+    top: 30%;
 }
 
 /*Panel 4*/
