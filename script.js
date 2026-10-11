@@ -40,6 +40,9 @@ function restartStory() {
     }
     document.getElementById("riverNav").classList.remove("show-btn");
     document.getElementById("p1").classList.add("visible");
+
+    document.getElementById("vineVictory").classList.remove("reveal-text");
+
 }
 
 //Panel 2: Hopping Interaction
@@ -77,6 +80,8 @@ function hopTo(stoneNumber) {
             plu.style.transform = "translate(-50%, -50%) scale(2.80)";
 
             document.getElementById("riverNav").classList.add("show-btn");
+
+            document.getElementById("riverVictory").classList.add("reveal-text"); //reveals pt.2 of text (p2)
             break;
     }
 
@@ -105,10 +110,12 @@ function clearVine(vineNumber) {
     }
 
     if (clearedVinesCount === 3) {
-        //Reveals the choice box after all vines are cleared
+        //Reveals the choice box & pt.2 text after all vines are cleared
           document.getElementById("choiceBox").classList.add("revealed");
+          document.getElementById("vineVictory").classList.add("reveal-text");
     }
 }
+
  
 function chooseEnding(branchChoice) {
     document.getElementById("p3").classList.remove("visible");

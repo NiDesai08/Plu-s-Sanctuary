@@ -36,6 +36,21 @@ html, body {
     pointer-events: auto;
 }
 
+.story-text {
+    position: absolute;
+    color: #f1eaf3;
+    font-family: 'Fredoka', 'Segoe UI', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: .5px;
+    z-index: 99; 
+    pointer-events: none; 
+    text-align: center; 
+
+    text-shadow: 0 0 10px rgba(247, 162, 255, 0.6),
+                 0 0 20px rgba(210, 86, 255, 0.4);
+}
+
 /*Panel 1*/
 
 .p1bg, .p1fg {
@@ -68,6 +83,13 @@ html, body {
 }
 .title:hover {
     filter: drop-shadow(0 0 10px #bb00ff) drop-shadow(0 0 15px #f051ff);
+}
+
+.p1-sub {
+    left: 74%;
+    top: 65%; 
+    transform: translate(-50%, -50%);
+    width: 100%;
 }
 
 /*Panel 2*/
@@ -138,6 +160,33 @@ html, body {
     visibility: visible; 
 }
 
+.p2-text {
+    left: 45%;
+    top: 23%;            
+    transform: translateX(-50%);
+    width: 85%;         
+    font-size: 1.4rem;  
+    text-align: left;
+}
+
+.p2-victory {
+    left: 75%;           
+    bottom: 25%;       
+    text-align: left;
+    line-height: 1.5;
+    font-size: 1.4rem;
+    opacity: 0;         /* Starts out hidden */
+    visibility: hidden;
+    transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+}
+
+.p2-victory.reveal-text {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
 /*Panel 3*/
 
 .forkBg, .v1, .v2, .v3 {
@@ -176,7 +225,6 @@ html, body {
     z-index: 5;
     pointer-events: none; 
 }
-
 
 /*Panel 3 click targets*/
 
@@ -240,7 +288,39 @@ html, body {
     top: 30%;
 }
 
+.p3-text {
+    left: 6%;         
+    top: 4%;            
+    text-align: left;
+    line-height: 1.5;
+    font-size: 1.6rem;  
+    color: #e9e2ea !important;
+    text-shadow: 0 0 10px rgba(12, 10, 12, 0.6);
+}
+
+.p3-victory {
+    left: 65%;
+    bottom: 20%;           
+    text-align: left;
+    line-height: 1.5;
+    font-size: 1.6rem;
+   
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+    color: #0a090a !important;
+    text-shadow: 0 0 10px rgba(255, 246, 255, 0.6);
+
+}
+
+.p3-victory.reveal-text {
+    opacity: 1;
+    visibility: visible;
+}
+
+
 /*Panel 4*/
+
 .ending-img { position: absolute; inset: 0; width: 100vw; height: 100dvh; object-fit: fill; z-index: 1; }
 
 /* Navigation button controls */
@@ -296,11 +376,18 @@ html, body {
     transform: scale(1.05);
 }
 
-/* Gives your primary restart button a subtle distinct glowing pop */
 .highlight-btn {
     border-color: #f051ff;
     box-shadow: 0 0 15px transparent, 0 0 10px #f051ff;
 }
 .highlight-btn:hover {
     background-color: #f051ff;
+}
+
+.p4-text {
+    left: 3%;           
+    top: 6%;           
+    text-align: left;
+    line-height: 1.5;
+    font-size: 1.4rem;
 }
