@@ -123,3 +123,12 @@ function chooseEnding(branchChoice) {
         p4b.classList.add("visible");
     }
 }
+
+function backToChoices(activeEndingId) {
+    //Hides current final image
+    document.getElementById(activeEndingId).classList.remove("visible");
+    
+    activePageIndex = 2; 
+    //transitions back to panel 3
+    document.getElementById("p3").classList.add("visible");
+}

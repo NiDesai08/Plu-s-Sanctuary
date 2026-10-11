@@ -71,12 +71,18 @@
 
         <section class="p4" id="p4a"> <!-- Panel 4 Ending A -->
             <img src="assets/Panel 4A/4A.png" class="ending-img">
-            <button class="nav-btn restart-btn" onclick="restartStory()">← Read Again</button>
+            <div class="ending-controls">
+                <button class="end-btn" onclick="backToChoices('p4a')">Go back to choices</button>
+                <button class="end-btn highlight-btn" onclick="restartStory()">Restart Story ↺</button>
+            </div>
         </section>
     
          <section class="p4" id="p4b"> <!-- Panel 4 Ending B -->
-            <img src="assets/Panel 4/4B.png" class="ending-img">
-            <button class="nav-btn restart-btn" onclick="restartStory()">← Read Again</button>
+            <img src="assets/Panel 4B/4B.png" class="ending-img">
+            <div class="ending-controls">
+                <button class="end-btn" onclick="backToChoices('p4b')">Go back to choices</button>
+                <button class="end-btn highlight-btn" onclick="restartStory()">Restart Story ↺</button>
+            </div>
         </section>
 
     </div>

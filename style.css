@@ -265,5 +265,42 @@ html, body {
 .hidden-nav { opacity: 0; visibility: hidden; transition: opacity 0.5s ease-out; }
 .hidden-nav.show-btn { opacity: 1; visibility: visible; }
 
-.restart-btn { right: auto; left: 50%; transform: translateX(-50%); }
-.restart-btn:hover { transform: translateX(-50%) scale(1.05); }
+.ending-controls {
+    position: absolute;
+    bottom: 4%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 100; 
+}
+
+.end-btn {
+    padding: 10px 22px;
+    background-color: rgba(0, 0, 0, 0.25);
+    border: 2px solid #bb00ff;
+    border-radius: 20px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 0.95rem;
+    cursor: pointer;
+    backdrop-filter: blur(4px);            
+    box-shadow: 0 0 15px rgba(187, 0, 255, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.end-btn:hover {
+    background-color: rgba(187, 0, 255, 0.6);
+    box-shadow: 0 0 25px #f051ff, 0 0 10px #bb00ff;
+    transform: scale(1.05);
+}
+
+/* Gives your primary restart button a subtle distinct glowing pop */
+.highlight-btn {
+    border-color: #f051ff;
+    box-shadow: 0 0 15px transparent, 0 0 10px #f051ff;
+}
+.highlight-btn:hover {
+    background-color: #f051ff;
+}
