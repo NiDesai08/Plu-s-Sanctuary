@@ -19,10 +19,10 @@ Plu's Sanctuary is a digital, point-and-click storybook that follows a little pl
 ## Challenges
 This was my first time fully creating a project with CSS, HTML, and JavaScript. Figuring out how elements interact, managing absolute positioning stacks, and writing functional code logic from scratch was a steep learning curve. Additionally, my hand-drawn 1920x1080 canvas illustrations were stretching and distorting to fill different laptop screen heights. I had to learn how browser scaling properties (`object-fit: fill/contain`) work to protect the focal art proportions while keeping the layouts looking seamless. I also ran into the same issue multiple times where invisible background containers were accidentally burying the button layers, making it impossible to click elements. This made me look more into browser layer stacks (`z-index`) and click triggers (`pointer-events`) to untangle the system grid.
 
-## Accomplishments that we're proud of
+## Accomplishments that I'm proud of
 I am very glad that I was at least able to finish all of the panels and most of the interactions that I had planned under these time constraints.
 
-## What we learned
+## What I learned
 As a complete beginner, this hackathon taught me a lot about web development/architecture. I learned how to isolate asset files to maintain strict 16:9 widescreen scaling constraints, how to structure cross-panel browser visibility using class injectors, A whole lot of CSS animation and transition properties, how get a decent webpage going and lots more !!
 
 ## What's next for Plu's Sanctuary
