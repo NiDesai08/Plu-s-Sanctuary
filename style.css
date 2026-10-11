@@ -11,12 +11,29 @@ html, body {
     overflow-x: hidden;
 }
 
-.intro, .river, .vineFork {
+.story {
     position: relative;
     width: 100vw;
-    height: 100dvh; 
-    overflow: hidden;
+    height: 100dvh;
+    
+}
+
+.p1, .p2, .p3, .p4 {
+    position: absolute;
+    inset: 0;
+    width: 100vw;
+    height: 100dvh;
     background-color: #02010a;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 1.2s ease-in-out, visibility 1.2s ease-in-out;
+}
+
+.p1.visible, .p2.visible, .p3.visible, .p4.visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
 
 /*Panel 1*/
@@ -101,14 +118,25 @@ html, body {
     transform: translate(-50%, -50%);
     z-index: 100;
     outline: none;
-    display: block !important;
 }
 
+/*Adjusts the position of the buttons*/
 .b1 { left: 55%; top: 16%; }
 .b2 { left: 41%; top: 24%; }
 .b3 { left: 59%; top: 40%; }
 .b4 { left: 37%; top: 51%; }
 .b5 { left: 60%; top: 74%; }
+
+.hidden-nav { 
+    opacity: 0; 
+    visibility: hidden; 
+    transition: opacity 0.5s ease-out; 
+}
+
+.hidden-nav.show-btn { 
+    opacity: 1; 
+    visibility: visible; 
+}
 
 /*Panel 3*/
 
@@ -128,6 +156,7 @@ html, body {
     width: 100%;
     height: 100%; 
     object-fit: contain;
+    object-position: center;
     z-index: 2;
 }
 
@@ -164,15 +193,76 @@ html, body {
     position: absolute;
     background: transparent !important; 
     border: 3px dashed transparent !important;       
-    
     border-radius: 40px;                         
     cursor: pointer;
     width: 320px;   
     height: 65px;   
     outline: none;
-    display: block !important;
 }
 
+/*Adjusts the position and rotation of the click targets for Panel 3*/
 .target1 { left: 50%; top: 30%; transform: translate(-30%, -70%) rotate(-16deg); }
 .target2 { left: 50%; top: 50%; transform: translate(-75%, -55%) rotate(15deg); }
 .target3 { left: 50%; top: 70%; transform: translate(-5%, -10%) rotate(-12deg);}
+
+.sign-choices {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translateX(-50%, -50%);
+    width: 450px;
+    display: flex;
+   justify-content: space-between;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.sign-choices.revealed { opacity: 1; visibility: visible; }
+
+.choice-btn {
+    padding: 12px 28px;
+    background-color: rgba(2, 1, 10, 0.85);
+    border: 2px solid #bb00ff;
+    border-radius: 20px;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 15px #bb00ff;
+    transition: all 0.3s ease;
+}
+
+.choice-btn:hover {
+     background-color: #f051ff; 
+     box-shadow: 0 0 25px #f051ff;
+     transform: scale(1.05);
+}
+
+/*Panel 4*/
+.ending-img { position: absolute; inset: 0; width: 100vw; height: 100dvh; object-fit: fill; z-index: 1; }
+
+/* Navigation button controls */
+.nav-btn {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    padding: 14px 30px;
+    background-color: rgba(187, 0, 255, 0.15);
+    border: 2px solid #bb00ff;
+    border-radius: 30px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 100;
+    box-shadow: 0 0 12px rgba(187, 0, 255, 0.4);
+    transition: all 0.3s ease-in-out;
+}
+.nav-btn:hover { background-color: #bb00ff; box-shadow: 0 0 20px #f051ff; transform: scale(1.05); }
+
+.hidden-nav { opacity: 0; visibility: hidden; transition: opacity 0.5s ease-out; }
+.hidden-nav.show-btn { opacity: 1; visibility: visible; }
+
+.restart-btn { right: auto; left: 50%; transform: translateX(-50%); }
+.restart-btn:hover { transform: translateX(-50%) scale(1.05); }

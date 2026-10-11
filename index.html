@@ -8,49 +8,74 @@
 </head>
 <body>
 
-    <section class="intro"> <!-- Panel 1 -->
-        <img src="assets/Panel 1/titleBack.png" class="p1bg" alt="Title Background">
-        <img src="assets/Panel 1/Title.png" class="title" alt="Title Text">
-        <img src="assets/Panel 1/titleFore.png" class="p1fg" alt="Title Foreground">   
-    </section>
+    <div class="story">
 
-    <section class="river"> <!-- Panel 2 -->
-        <img src="assets/Panel 2/p2Back.png" class="riverbg" alt="River Background">
+       <section class="p1 visible" id="p1"> <!-- Panel 1 Intro -->
+            <img src="assets/Panel 1/titleBack.png" class="p1bg" >
+            <img src="assets/Panel 1/Title.png" class="title">
+            <img src="assets/Panel 1/titleFore.png" class="p1fg">
+            
+            <!--story navigation button-->
+            <button class="nav-btn" onclick="nextPage()">Begin →</button>
+        </section>
+
+
+        <section class="p2" id="p2"> <!-- Panel 2 River -->
+            <img src="assets/Panel 2/p2Back.png" class="riverbg">
+            
+            <img src="assets/Panel 2/p2ForeT.png" class="shore topShore">
+            <img src="assets/Panel 2/p2ForeB.png" class="shore bottomShore">
+
+            <img src="assets/Panel 2/p2Puzzle.png" class="surfaces">
+            
+            <img src="assets/Panel 2/pluLand.png" class="pluLand">
+
+            <div class="surface-grid">
+                <button class="b-btn b1" onclick="hopTo(1)"></button>
+                <button class="b-btn b2" onclick="hopTo(2)"></button>
+                <button class="b-btn b3" onclick="hopTo(3)"></button>
+                <button class="b-btn b4" onclick="hopTo(4)"></button>
+                <button class="b-btn b5" onclick="hopTo(5)"></button>
+            </div>
+
+            <button class="nav-btn hidden-nav" id="riverNav" onclick="nextPage()">Continue Journey →</button>
+        </section>
+
+        <section class="p3" id="p3"> <!-- Panel 3 Vine Fork -->
+            <img src="assets/Panel 3/p3Back.png" class="forkBg">
         
-        <img src="assets/Panel 2/p2ForeT.png" class="shore topShore" alt="Top Shore">
-        <img src="assets/Panel 2/p2ForeB.png" class="shore bottomShore" alt="Bottom Shore">
+            <img src="assets/Panel 3/p3Choice.png" class="sign">
 
-        <img src="assets/Panel 2/p2Puzzle.png" class="surfaces" alt="Stepping Stones">
-        
-        <img src="assets/Panel 2/pluLand.png" class="pluLand" alt="Plu Character">
+            <img src="assets/Panel 3/p3Vine1.png" class="v1">
+            <img src="assets/Panel 3/p3Vine2.png" class="v2">
+            <img src="assets/Panel 3/p3Vine3.png" class="v3">
 
-        <div class="surface-grid">
-            <button class="b-btn b1" onclick="hopTo(1)"></button>
-            <button class="b-btn b2" onclick="hopTo(2)"></button>
-            <button class="b-btn b3" onclick="hopTo(3)"></button>
-            <button class="b-btn b4" onclick="hopTo(4)"></button>
-            <button class="b-btn b5" onclick="hopTo(5)"></button>
-        </div>
-    </section>
+            <div class="vines">
+                <button class="v-btn target1" onclick="clearVine(1)"></button>
+                <button class="v-btn target2" onclick="clearVine(2)"></button>
+                <button class="v-btn target3" onclick="clearVine(3)"></button>
+            </div>
 
-    <section class="vineFork"> <!-- Panel 3 -->
-        <img src="assets/Panel 3/p3Back.png" class="forkBg">
-       
-        <img src="assets/Panel 3/p3Choice.png" class="sign">
+            <div class="sign-choices" id="choiceBox">
+                <button class="choice-btn" onclick="chooseEnding('left')">Explore Left</button>
+                <button class="choice-btn" onclick="chooseEnding('right')">Explore Right</button>
+            </div>
 
-        <img src="assets/Panel 3/p3Vine1.png" class="v1">
-        <img src="assets/Panel 3/p3Vine2.png" class="v2">
-        <img src="assets/Panel 3/p3Vine3.png" class="v3">
+            <img src="assets/Panel 3/p3Plu.png" class="pluFg">
+        </section>
 
-        <div class="vines">
-            <button class="v-btn target1" onclick="clearVine(1)"></button>
-            <button class="v-btn target2" onclick="clearVine(2)"></button>
-            <button class="v-btn target3" onclick="clearVine(3)"></button>
-        </div>
+        <section class="p4" id="p4a"> <!-- Panel 4 Ending A -->
+            <img src="assets/Panel 4/4A.png" class="ending-img">
+            <button class="nav-btn restart-btn" onclick="restartStory()">← Read Again</button>
+        </section>
+    
+         <section class="p4" id="p4b">
+            <img src="assets/Panel 4/4B.png" class="ending-img">
+            <button class="nav-btn restart-btn" onclick="restartStory()">← Read Again</button>
+        </section>
 
-        <img src="assets/Panel 3/p3Plu.png" class="pluFg">
-    </section>
-  
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
